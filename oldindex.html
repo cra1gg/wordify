@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="head.js"></script>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Wordify - URL Shortener</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="The URL Shortener for Humans">
+    <meta name="author" content="Craig D'souza">
+    <link rel="stylesheet" type="text/css" media="screen" href="index.css" />
+    <link rel="shortcut icon" href="https://i.imgur.com/sMhM8kU.png">
+</head>
+
+<body>
+    <div class="main">
+        <header>
+            <h1 class="h1"><img src="https://i.imgur.com/zcwzZtj.png"></h1>
+        </header>
+        <div class="form">
+            <input type="url" id="urlinput" placeholder="Paste URL here">
+            <div>
+                <input type="text" maxlength=20 id="custominput" placeholder="Custom URL">
+                <p id="erbox" style="color:red;"></p>
+            </div>
+            <button id="sbtn" type="button" class="btn btn-dark"> 🔗 Shorten URL</button>
+        </div>
+        <br>
+        <div class="form" style="margin-bottom : 0px !important;">
+            <input type="text" id="shortenedURL" placeholder="Shortened URL">
+            <p id="sucess" style="color:cyan"></p>
+        </div>
+        <footer class="infos">
+            <p class="small-text" style="color:grey;">Don't use Wordify to shorten any URLs with sensitive information. We are not responsible for 
+			any damages caused by doing so.</p>
+        </footer>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
