@@ -104,7 +104,7 @@ let send_request = (url) => {
     pushJSON(address, longurl, shorturl);
 
     document.getElementById('shortenedURL').value = window.location.href;
-    document.getElementById('sucess').innerHTML = "Short URL Copied to Clipboard!";
+    document.getElementById('sucess').innerHTML = "Shortened URL has been copied to your clipboard.";
     copyer("shortenedURL");
 };
 
