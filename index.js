@@ -35,16 +35,16 @@ let geturl = () => {
 };
 
 let getrandom = () => {
-    /*let text = "";
+    let text = "";
     let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
     for (let i = 0; i < 5; i++)
         text += possible.charAt(Math.floor(Math.random() * possible.length));
-    return text;*/
-    let url = 'https://random-word-api.herokuapp.com/word';
+    return text;
+    /*let url = 'https://random-word-api.herokuapp.com/word';
     let response = await fetch(url);
     let commits = await response.json(); // read response body and parse as JSON
-    return commits[0];
+    return commits[0];*/
 };
 
 let genhash = () => {
