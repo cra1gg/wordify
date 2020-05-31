@@ -34,34 +34,28 @@ let geturl = () => {
 
 };
 
-let getrandom = () => {
-    /*let text = "";
-    let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+function wait(ms)
+{
+    var d = new Date();
+    var d2 = null;
+    do { d2 = new Date(); }
+    while(d2-d < ms);
+}
 
-    for (let i = 0; i < 5; i++)
-        text += possible.charAt(Math.floor(Math.random() * possible.length));
-    return text;*/
-    let request = new XMLHttpRequest();
-    request.open("GET", "https://random-word-api.herokuapp.com/word");
-    request.send();
-    request.onload = () => {
-    console.log(request)
-    if (request.status == 200){
-        return JSON.parse(request.response)[0];
-    } else {
-        console.log(`error ${request.status} ${request.statusText}`)
-        return null
-    }
-    /*let url = 'https://random-word-api.herokuapp.com/word';
-    let response = await fetch(url);
-    let commits = await response.json(); // read response body and parse as JSON
-    return commits[0];*/
-};
+async function getrandom() {
+    let response = await fetch('https://random-word-api.herokuapp.com/word')
+    let data = await response.json()
+    return data[0]
+  }
 
 let genhash = () => {
     if (document.getElementById("custominput").value == "") {
-        window.location.hash = getrandom();
-        check_is_unique();
+        const word = getrandom().then(data => 
+            {
+                window.location.hash = data;
+                check_is_unique();
+            });
+        
     } else {
         window.location.hash = document.getElementById("custominput").value;
 
