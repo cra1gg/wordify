@@ -34,28 +34,19 @@ let geturl = () => {
 
 };
 
-function wait(ms)
-{
-    var d = new Date();
-    var d2 = null;
-    do { d2 = new Date(); }
-    while(d2-d < ms);
-}
-
 async function getrandom() {
-    let response = await fetch('https://random-word-api.herokuapp.com/word')
-    let data = await response.json()
-    return data[0]
-  }
+  let response = await fetch('https://random-word-api.herokuapp.com/word')
+  let data = await response.json()
+  return data[0]
+}
 
 let genhash = () => {
     if (document.getElementById("custominput").value == "") {
-        const word = getrandom().then(data => 
-            {
-                window.location.hash = data;
-                check_is_unique();
-            });
-        
+        getrandom().then(data => {
+            window.location.hash = data;
+            check_is_unique();
+            send_request(geturl());
+        })
     } else {
         window.location.hash = document.getElementById("custominput").value;
 
@@ -124,7 +115,6 @@ let shorturl = () => {
         document.getElementById("erbox").innerHTML = "";
         if (document.getElementById("custominput").value == "") {
             genhash();
-            send_request(longurl);
 
         } else {
             if (cre.test(document.getElementById("custominput").value)) {
@@ -132,7 +122,6 @@ let shorturl = () => {
                     document.getElementById("erbox").style.color = "cyan";
                     document.getElementById("erbox").innerHTML = " Custom Address Available ✔️";
                     genhash();
-                    send_request(longurl);
                 } else {
                     document.getElementById("erbox").style.color = "red";
                     document.getElementById("erbox").innerHTML = "❌ Custom Address Already Used, Choose Another";
