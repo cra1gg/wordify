@@ -28,11 +28,6 @@ let cinp = () => {
 
 };
 
-let geturl = () => {
-    let url = document.getElementById("urlinput").value;
-    return url;
-
-};
 
 async function getrandom() {
   let response = await fetch('https://random-word-api.herokuapp.com/word')
@@ -43,23 +38,31 @@ async function getrandom() {
 let genhash = () => {
     if (document.getElementById("custominput").value == "") {
         getrandom().then(data => {
-            window.location.hash = data;
-            check_is_unique();
-            send_request(geturl());
+            document.getElementById('shortenedURL').value = window.location.href + "#" + data
+            if (check_is_unique(data)){
+                send_request();
+            }
+            else {
+                genhash();
+            }
         })
     } else {
         window.location.hash = document.getElementById("custominput").value;
+        //FIX THIS
 
     }
 };
 
-let check_is_unique = () => {
-    let url = window.location.hash.substr(1);
+let check_is_unique = (word) => {
+    let url = word;
     let res = JSON.parse(fetchJSON(endpoint + '/?q=s:' + url))[0];
     let data = res;
 
-    if (data != null) {
-        genhash();
+    if (data != null){
+        return false;
+    }
+    else {
+        return true;
     }
 
 
@@ -92,19 +95,17 @@ let copyer = (containerid) => {
     }
 };
 
-let send_request = (url) => {
-    let longurl = url;
-    let shorturl = window.location.hash.substr(1)
+let send_request = () => {
+    let longurl = document.getElementById("urlinput").value;
+    let shorturl = document.getElementById("shortenedURL").value.split('#')[1];
     let address = endpoint + "/";
-    // console.log(address)
     pushJSON(address, longurl, shorturl);
-    document.getElementById('shortenedURL').value = window.location.href;
     document.getElementById('sucess').innerHTML = "Shortened URL has been copied to your clipboard.";
     copyer("shortenedURL");
 };
 
 let shorturl = () => {
-    let longurl = geturl();
+    let longurl = document.getElementById("urlinput").value;
     let re = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/;
     let cre = /^([a-zA-Z0-9 _-]+)$/;
     let protocol_ok = re.test(longurl);
@@ -116,7 +117,8 @@ let shorturl = () => {
         if (document.getElementById("custominput").value == "") {
             genhash();
 
-        } else {
+        } 
+        else {
             if (cre.test(document.getElementById("custominput").value)) {
                 if (cinp()) {
                     document.getElementById("erbox").style.color = "cyan";
