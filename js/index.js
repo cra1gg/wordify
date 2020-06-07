@@ -30,7 +30,7 @@ let cinp = () => {
 
 
 async function getrandom() {
-  let response = await fetch('https://random-word-api.herokuapp.com/word')
+  let response = await fetch('https://wordify-api.herokuapp.com/word')
   let data = await response.json()
   return data[0]
 }
