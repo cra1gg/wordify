@@ -13,17 +13,23 @@ let cinp = () => {
     document.getElementById("erbox").innerHTML = "";
     let cival = document.getElementById("custominput").value;
 
-    let res = JSON.parse(fetchJSON(endpoint + '/?q=s:' + cival))[0]["l"];
-    let data = res;
-
-
-    if (data != null) {
-        return false;
-
-    } else if (data == null) {
-        return true;
-
+    try {
+        let res = JSON.parse(fetchJSON(endpoint + '/?q=s:' + cival))[0]["l"];
+        let data = res;
+        if (data != null) {
+            return false;
+    
+        } else if (data == null) {
+            return true;
+    
+        }
     }
+    catch(err){
+        return true;
+    }
+
+
+   
 
 
 };
@@ -48,8 +54,8 @@ let genhash = () => {
         })
     } else {
         window.location.hash = document.getElementById("custominput").value;
-        //FIX THIS
-
+        document.getElementById('shortenedURL').value = window.location.href
+        send_request();
     }
 };
 
@@ -142,4 +148,15 @@ let shorturl = () => {
 
     }
 };
+
+let urlcheck = () => {
+    if (cinp()) {
+        document.getElementById("erbox").style.color = "cyan";
+        document.getElementById("erbox").innerHTML = " Custom Address Available ✔️";
+    } else {
+        document.getElementById("erbox").style.color = "red";
+        document.getElementById("erbox").innerHTML = "❌ Custom Address Already Used, Choose Another";
+    }
+};
 document.getElementById("sbtn").addEventListener("click", shorturl);
+document.getElementById("custominput").addEventListener("input", urlcheck)
