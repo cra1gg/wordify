@@ -132,7 +132,7 @@ let shorturl = () => {
                     genhash();
                 } else {
                     document.getElementById("erbox").style.color = "red";
-                    document.getElementById("erbox").innerHTML = "❌ Custom Address Already Used, Choose Another";
+                    document.getElementById("erbox").innerHTML = "❌ Custom Address Not Available";
                     document.getElementById("custominput").placeholder = document.getElementById("custominput").value;
                     document.getElementById("custominput").value = "";
                 }
