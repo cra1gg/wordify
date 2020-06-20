@@ -155,7 +155,7 @@ let urlcheck = () => {
         document.getElementById("erbox").innerHTML = " Custom Address Available ✔️";
     } else {
         document.getElementById("erbox").style.color = "red";
-        document.getElementById("erbox").innerHTML = "❌ Custom Address Already Used, Choose Another";
+        document.getElementById("erbox").innerHTML = "❌ Custom Address Not Available";
     }
 };
 document.getElementById("sbtn").addEventListener("click", shorturl);
