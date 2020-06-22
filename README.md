@@ -6,25 +6,33 @@ The last thing we need is another URL shortener, especially one with such primit
 
 Let's use an example, let's say I want to shorten this mess of a url:
 
-```https://www.google.com/search?rlz=1C1GCEA_enCA847CA847&sxsrf=ALeKk00Zncgu0yoyxhNHjIVeZm1CYziITg%3A1592868590748&ei=7j7xXu2RLeeE9PwPjtWkmAg&q=what+is+the+weather+in+toronto&oq=what+is+the+weather+in+toronto&gs_lcp=CgZwc3ktYWIQAzIHCAAQRhCAAjICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADoECAAQRzoECCMQJzoHCAAQsQMQQzoECAAQQzoFCAAQsQM6BQgAEJECOgUIABCDAToKCAAQsQMQRhCAAlDeywRY_vIEYM7zBGgDcAN4AIABgQKIAbkskgEGMC4yOS4zmAEAoAEBqgEHZ3dzLXdpeg&sclient=psy-ab&ved=0ahUKEwjtwJn0yZbqAhVnAp0JHY4qCYMQ4dUDCAw&uact=5```
+```
+https://www.google.com/search?rlz=1C1GCEA_enCA847CA847&sxsrf=ALeKk00Zncgu0yoyxhNHjIVeZm1CYziITg%3A1592868590748&ei=7j7xXu2RLeeE9PwPjtWkmAg&q=what+is+the+weather+in+toronto&oq=what+is+the+weather+in+toronto&gs_lcp=CgZwc3ktYWIQAzIHCAAQRhCAAjICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADoECAAQRzoECCMQJzoHCAAQsQMQQzoECAAQQzoFCAAQsQM6BQgAEJECOgUIABCDAToKCAAQsQMQRhCAAlDeywRY_vIEYM7zBGgDcAN4AIABgQKIAbkskgEGMC4yOS4zmAEAoAEBqgEHZ3dzLXdpeg&sclient=psy-ab&ved=0ahUKEwjtwJn0yZbqAhVnAp0JHY4qCYMQ4dUDCAw&uact=5
+```
 
 I can put this into a normal URL shortener, and this is the result:
 
-`https://bit.ly/2Cx0SsY`
+```
+https://bit.ly/2Cx0SsY
+```
 
 That's cool, it's way shorter than that blob above, and it'll be easy to send to my friends. What's wrong with this?
 
 Well to show you, let me put this same URL into wordify, this is the result:
 
-`https://wordify.xyz/#mouse`
+```
+https://wordify.xyz/#mouse
+```
 
 This seems to have the same effect, it generates a much shorter URL which can be circulated right?
 
 There's one key difference here, let's ignore everything before the last `/` and consider only the unique link itself
 
-`bit.ly: 2Cx0SsY`
+```
+bit.ly: 2Cx0SsY
 
-`wordify: #mouse`
+wordify: #mouse
+```
 
 Now look at these two, and tell me which one is easier to memorize. Is it `2 capital c lowercase x zero capital s lowercase s capital y` or is it `#mouse`?
 
