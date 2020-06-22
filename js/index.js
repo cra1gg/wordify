@@ -53,8 +53,7 @@ let genhash = () => {
             }
         })
     } else {
-        window.location.hash = document.getElementById("custominput").value;
-        document.getElementById('shortenedURL').value = window.location.href
+        document.getElementById('shortenedURL').value = window.location.href + "#" + document.getElementById("custominput").value
         send_request();
     }
 };
