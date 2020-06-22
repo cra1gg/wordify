@@ -4,7 +4,7 @@
 ### Why does this exist?
 The last thing we need is another URL shortener, especially one with such primitive functionality right? Well, Wordify aims to address the root of the problem when it comes to shortening urls
 
-Let's use an example. Say I want to shorten this mess of a url:
+Let's use an example. Say I want to shorten this messy url:
 
 ```
 https://www.google.com/search?rlz=1C1GCEA_enCA847CA847&sxsrf=ALeKk00Zncgu0yoyxhNHjIVeZm1CYziITg%3A1592868590748&ei=7j7xXu2RLeeE9PwPjtWkmAg&q=what+is+the+weather+in+toronto&oq=what+is+the+weather+in+toronto&gs_lcp=CgZwc3ktYWIQAzIHCAAQRhCAAjICCAAyAggAMgIIADICCAAyAggAMgIIADICCAAyAggAMgIIADoECAAQRzoECCMQJzoHCAAQsQMQQzoECAAQQzoFCAAQsQM6BQgAEJECOgUIABCDAToKCAAQsQMQRhCAAlDeywRY_vIEYM7zBGgDcAN4AIABgQKIAbkskgEGMC4yOS4zmAEAoAEBqgEHZ3dzLXdpeg&sclient=psy-ab&ved=0ahUKEwjtwJn0yZbqAhVnAp0JHY4qCYMQ4dUDCAw&uact=5
