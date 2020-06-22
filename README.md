@@ -18,7 +18,7 @@ https://bit.ly/2Cx0SsY
 
 That's cool, it's way shorter than that blob above, and it'll be easy to send to my friends. What's wrong with this?
 
-Well to show you, let me put this same URL into wordify, this is the result:
+Well to show you, let me put this same URL into Wordify. This is the result:
 
 ```
 https://wordify.xyz/#mouse
