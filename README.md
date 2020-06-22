@@ -1,4 +1,4 @@
-# Woridfy
+# Wordify
 > Wordify is a URL shortener designed for readbility and memorability .
 
 ### Why does this exist?
