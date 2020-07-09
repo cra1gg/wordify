@@ -8,9 +8,10 @@ firebase_admin.initialize_app(cred, {
     'databaseURL': "https://wordify-4eccd.firebaseio.com/"
 })
 
-ref = db.reference('/words')
-f = open("output.txt", "r")
-lst = f.readlines()
+ref = db.reference('/mappings')
+ref.delete()
+#f = open("output.txt", "r")
+#lst = f.readlines()
 for word in lst:
     key = ref.push({
         'word': word.rstrip("\n"),
