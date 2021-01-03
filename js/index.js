@@ -53,7 +53,7 @@ let genhash = () => {
             }
         })
     } else {
-        document.getElementById('shortenedURL').value = window.location.href + "#" + document.getElementById("custominput").value
+        document.getElementById('shortenedURL').value = "https://wordify.xyz#" + document.getElementById("custominput").value
         send_request();
     }
 };
