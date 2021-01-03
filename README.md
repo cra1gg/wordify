@@ -49,7 +49,7 @@ Wordify uses the [Wordify API](https://api.wordify.xyz/) as a backend for gettin
 
 Wordify stores URLs in a [JSONBox](https://jsonbox.io/) so it may not be the best idea to use wordify for sensitive URLs. Consider yourself warned.
 
-You can access wordify [here](https://wordify.com)
+You can access wordify [here](https://wordify.xyz)
 
 ## Credits
 
