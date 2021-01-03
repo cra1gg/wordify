@@ -44,7 +44,7 @@ async function getrandom() {
 let genhash = () => {
     if (document.getElementById("custominput").value == "") {
         getrandom().then(data => {
-            document.getElementById('shortenedURL').value = window.location.href + "#" + data
+            document.getElementById('shortenedURL').value = "https://wordify.xyz#" + data
             if (check_is_unique(data)){
                 send_request();
             }
